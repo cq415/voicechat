@@ -1,0 +1,12 @@
+{
+  "system_prompt": "你是 VoiceChat 的智能语音助手，回答简洁友好，适合语音朗读。",
+  "models": [
+    { "id": "demo",     "name": "本地演示模型（无需 API Key）", "provider": "demo",     "base_url": "", "model": "demo" },
+    { "id": "doubao",   "name": "豆包 Doubao (火山方舟)",        "provider": "doubao",   "base_url": "https://ark.cn-beijing.volces.com/api/v3", "model": "doubao-seed-character-260628" },
+    { "id": "deepseek", "name": "DeepSeek Chat",               "provider": "deepseek", "base_url": "https://api.deepseek.com/v1", "model": "deepseek-chat" },
+    { "id": "kimi",     "name": "Kimi (Moonshot)",             "provider": "kimi",     "base_url": "https://api.moonshot.cn/v1", "model": "moonshot-v1-8k" },
+    { "id": "qwen",     "name": "通义千问 Qwen-Turbo",          "provider": "qwen",     "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1", "model": "qwen-turbo" },
+    { "id": "openai",   "name": "OpenAI GPT-4o-mini",          "provider": "openai",   "base_url": "https://api.openai.com/v1", "model": "gpt-4o-mini" },
+    { "id": "custom",   "name": "自定义 OpenAI 兼容接口",        "provider": "custom",   "base_url": "", "model": "" }
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoiceChat · 智能语音对话机器人</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- 登录 / 注册 -->
+<div id="authView" class="hidden">
+  <div class="auth-card">
+    <div class="logo">🎙️</div>
+    <h1>VoiceChat</h1>
+    <p class="sub">支持语音对话的智能聊天机器人</p>
+    <div class="auth-err" id="authErr"></div>
+    <input id="authUser" placeholder="用户名（2-20 位）" autocomplete="username">
+    <input id="authPass" type="password" placeholder="密码（至少 4 位）" autocomplete="current-password">
+    <button class="btn btn-primary w100" id="loginBtn">登 录</button>
+    <button class="btn w100" id="registerBtn">注册新账号</button>
+  </div>
+</div>
+
+<!-- 主界面 -->
+<div id="mainView" class="hidden">
+  <aside id="sidebar">
+    <div class="side-head">
+      <span class="brand">🎙️ VoiceChat</span>
+    </div>
+    <button class="btn btn-primary w100" id="newChatBtn">＋ 新对话</button>
+    <div id="convList"></div>
+    <div class="side-foot">
+      <span id="meName"></span>
+      <button class="btn btn-ghost" id="logoutBtn">退出</button>
+    </div>
+  </aside>
+
+  <section id="chatArea">
+    <div id="chatTopbar">
+      <select id="modelSelect"></select>
+      <button class="btn" id="settingsBtn">⚙️ 模型设置</button>
+      <button class="btn" id="ttsBtn" title="语音朗读开关">🔇 朗读关</button>
+    </div>
+    <div id="messages"></div>
+    <div id="inputBar">
+      <button id="micBtn" title="按住说话 / 点击开始语音输入">🎤</button>
+      <textarea id="msgInput" rows="1" placeholder="输入消息，或点击麦克风语音输入… (Enter 发送，Shift+Enter 换行)"></textarea>
+      <button class="btn btn-primary" id="sendBtn">发送</button>
+    </div>
+  </section>
+</div>
+
+<!-- 模型设置弹窗 -->
+<div id="settingsModal" class="modal hidden">
+  <div class="modal-card">
+    <h2>模型设置</h2>
+    <p class="sub" id="settingsHint"></p>
+    <div id="keyField">
+      <label>API Key</label>
+      <input id="apiKeyInput" type="password" placeholder="sk-...">
+    </div>
+    <div id="customFields" class="hidden">
+      <label>接口地址 (Base URL)</label>
+      <input id="customBase" placeholder="https://api.example.com/v1">
+      <label>模型名（豆包填 ep-xxxx 接入点 ID 或 doubao-xxx）</label>
+      <input id="customModel" placeholder="my-model / ep-xxxx">
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="settingsCancel">取消</button>
+      <button class="btn btn-primary" id="settingsSave">保存</button>
+    </div>
+    <p class="mini">提示：API Key 仅保存在服务器端你的账号下；本地演示模型无需任何配置。</p>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
